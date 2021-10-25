@@ -42,4 +42,5 @@ public class TestCalcForceExertedBy {
         checkEquals(p1.calcForceExertedBy(p2), 133.4, "calcForceExertedBy()", 0.01);
         checkEquals(p1.calcForceExertedBy(p3), 6.67e-11, "calcForceExertedBy()", 0.01);
     }
+
 }
