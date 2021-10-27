@@ -33,6 +33,7 @@ public class LinkedListDeque <T>{
 
     public void addFirst(T x){
         first = new ListDeque(x,first,null);
+        if(first.next!=null)
         first.next.last=first;
         size = size +1;
         if(size ==1)
@@ -41,6 +42,7 @@ public class LinkedListDeque <T>{
 
     public void addLast(T x) {
         last = new ListDeque(x,null,last);
+        if(last.last!=null)
         last.last.next=last;
         size = size + 1;
         if(size==1)
