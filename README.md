@@ -6,6 +6,8 @@
 
 ---
 
+[课程主页](https://sp18.datastructur.es/)
+
 直接记一下笔记吧
 
 #### w2's Discussion
@@ -42,5 +44,5 @@ dcatenate() and catenate() 加一句判断A是否为null ，解决 test null arg
 
 
 
-
+# **我把note迁移了**
 
