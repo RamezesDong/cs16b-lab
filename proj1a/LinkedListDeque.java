@@ -20,19 +20,20 @@ public class LinkedListDeque <T>{
         last = null;
         size=0;
     }
-    public LinkedListDeque(T x){
-        first = new ListDeque(x,null,null);
-        last = new ListDeque(x,null,null);
-        size = 1;
-    }
-    public LinkedListDeque(T x, ListDeque n, ListDeque l){
-        first = new ListDeque(x,n,l);
-        last = new ListDeque(x,n,l);
-        size = 1;
-    }
+//    public LinkedListDeque(T x){
+//        first = new ListDeque(x,null,null);
+//        last = new ListDeque(x,null,null);
+//        size = 1;
+//    }
+//    public LinkedListDeque(T x, ListDeque n, ListDeque l){
+//        first = new ListDeque(x,n,l);
+//        last = new ListDeque(x,n,l);
+//        size = 1;
+//    }
 
     public void addFirst(T x){
         first = new ListDeque(x,first,null);
+        first.next.last=first;
         size = size +1;
         if(size ==1)
             last=first;
@@ -40,6 +41,7 @@ public class LinkedListDeque <T>{
 
     public void addLast(T x) {
         last = new ListDeque(x,null,last);
+        last.last.next=last;
         size = size + 1;
         if(size==1)
             first=last;
@@ -69,8 +71,10 @@ public class LinkedListDeque <T>{
             first=null;
             last=null;
         }
-        else
-        first =first.next;
+        else{
+            first =first.next;
+            first.last=null;
+        }
         size=size-1;
         return fr;
     }
@@ -83,8 +87,10 @@ public class LinkedListDeque <T>{
             first=null;
             last=null;
         }
-        else
-            last =last.next;
+        else{
+            last =last.last;
+            last.next=null;
+        }
         size=size-1;
         return la;
     }
