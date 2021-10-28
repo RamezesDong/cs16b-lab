@@ -32,27 +32,27 @@ LinkedListDeque:
 
 Q: Give an example of at least one idea from the staff solution that would have made your solution better (if any).
 
-A: 
+A: NAN 
 
 Q: What's something you felt proud of in your code, if anything?
 
-A:
+A: deal with the problems by myself
 
 Q: What's something that was particularly inelegant in your code, if anything?
 
-A:
+A: Nan
 
 Q: What did you learn by talking to your partner about writing LinkedListDeque?
 
-A:
+A: No partner for me 
 
 Q: What do you wish you would have known before writing LinkedListDeque, if anything?
 
-A:
+A: The function which need to code
 
 Q: If you wrote LinkedListDeque again, what would you do differently, if anything?
 
-A:
+A: righter and faster
 
 -----
 
@@ -60,4 +60,4 @@ Meta:
 
 Q: Did you like this design review process? Anything we should do differently next time?
 
-A: 
+A: I don't like this process , but it is significant for me.
