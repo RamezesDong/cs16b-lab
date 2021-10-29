@@ -14,8 +14,7 @@ public class Palindrome {
         if (a.size() == 0 && a.size() == 1) {
             return true;
         }
-        int num = a.size() / 2;
-        for (int i = 0; i < num; i = i + 1) {
+        while (a.size() > 1) {
             if (a.removeFirst() != a.removeLast()) {
                 return false;
             }
@@ -28,9 +27,8 @@ public class Palindrome {
         if (a.size() == 0 && a.size() == 1) {
             return true;
         }
-        int num = a.size() / 2;
-        for (int i = 0; i < num; i = i + 1) {
-            if(!cc.equalChars(a.removeFirst(), a.removeLast())) {
+        while (a.size() > 1) {
+            if (!cc.equalChars(a.removeFirst(), a.removeLast())) {
                 return false;
             }
         }

@@ -21,7 +21,7 @@ public class TestPalindrome {
     public void testIsPalindorme() {
         String word = "1223221";
         boolean a = palindrome.isPalindrome(word);
-        // assertTrue(palindrome.isPalindrome(word));
+        assertTrue(palindrome.isPalindrome(word));
         String word2 = "23456";
         assertFalse(palindrome.isPalindrome(word2));
     }
@@ -30,10 +30,16 @@ public class TestPalindrome {
     public void testIsPalidormeOffByOne() {
         CharacterComparator offByOne = new OffByOne();
         assertFalse(palindrome.isPalindrome("amssyuww", offByOne));
-        assertTrue(palindrome.isPalindrome("abcdab", offByOne));
+        assertTrue(palindrome.isPalindrome("abcab", offByOne));
         assertTrue(palindrome.isPalindrome("", offByOne));
     }
 
+    @Test
+    public void testIspalidormeOffByN() {
+        CharacterComparator offByN = new OffByN(5);
+        assertTrue(palindrome.isPalindrome("afeaf", offByN));
+        assertFalse(palindrome.isPalindrome("aaabbb", offByN));
+    }
     //public static void main(String[] args) {
     //    jh61b.junit.TestRunner.runTests("all", TestPalindrome.class);
     //}
