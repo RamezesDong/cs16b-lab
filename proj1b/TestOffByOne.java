@@ -15,9 +15,9 @@ public class TestOffByOne {
         assertFalse(nb);
     }
 
-    public static void main(String[] args) {
-        jh61b.junit.TestRunner.runTests("all", TestOffByOne.class);
-    }
+//    public static void main(String[] args) {
+//        jh61b.junit.TestRunner.runTests("all", TestOffByOne.class);
+//    }
     // Your tests go here.
-    //Uncomment this class once you've created your CharacterComparator interface and OffByOne class. **/
+    //Uncomment thisacterComparator interface and OffByOne class. **/
 }

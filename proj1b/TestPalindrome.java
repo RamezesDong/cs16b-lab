@@ -1,7 +1,5 @@
 import org.junit.Test;
 
-import java.awt.*;
-
 import static org.junit.Assert.*;
 
 public class TestPalindrome {
@@ -27,16 +25,17 @@ public class TestPalindrome {
         String word2 = "23456";
         assertFalse(palindrome.isPalindrome(word2));
     }
+
     @Test
-    public void testIsPalidormeOffByOne(){
-        CharacterComparator OffByOne = new OffByOne() ;
-        assertFalse(palindrome.isPalindrome("amssyuww", OffByOne));
-        assertTrue(palindrome.isPalindrome("abcdab", OffByOne));
-        assertTrue(palindrome.isPalindrome("", OffByOne));
+    public void testIsPalidormeOffByOne() {
+        CharacterComparator offByOne = new OffByOne();
+        assertFalse(palindrome.isPalindrome("amssyuww", offByOne));
+        assertTrue(palindrome.isPalindrome("abcdab", offByOne));
+        assertTrue(palindrome.isPalindrome("", offByOne));
     }
 
-    public  static void main(String[] args) {
-        jh61b.junit.TestRunner.runTests("all", TestPalindrome.class);
-    }
+    //public static void main(String[] args) {
+    //    jh61b.junit.TestRunner.runTests("all", TestPalindrome.class);
+    //}
     //Uncomment this class once you've created your Palindrome class. */
 }
