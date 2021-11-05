@@ -39,6 +39,7 @@ public class GuitarPlayer {
     }
 
     private void initialize() {
+        //Guitar buffer size = 128,harp's stuff is 128*2
         strings = new GuitarString[128];
         vol = new double[128];
         for (int i = 0; i < strings.length; i++) {
