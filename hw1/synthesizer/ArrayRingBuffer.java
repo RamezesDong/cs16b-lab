@@ -1,6 +1,5 @@
 // TODO: Make sure to make this class a part of the synthesizer package
 package synthesizer;
-
 import java.util.Iterator;
 
 //TODO: Make sure to make this class and all of its methods public
@@ -80,6 +79,11 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
         // TODO: Return the first item. None of your instance variables should change.
     }
 
+    @Override
+    public Iterator<T> iterator() {
+        return new ArrayRingBufferIterator();
+    }
+
     private class ArrayRingBufferIterator implements Iterator<T> {
         private int winPos;
 
@@ -101,9 +105,5 @@ public class ArrayRingBuffer<T> extends AbstractBoundedQueue<T> {
         }
     }
 
-    @Override
-    public Iterator<T> iterator() {
-        return new ArrayRingBufferIterator();
-    }
     // TODO: When you get to part 5, implement the needed code to support iteration.
 }
