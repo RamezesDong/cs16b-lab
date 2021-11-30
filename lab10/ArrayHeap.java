@@ -210,7 +210,6 @@ public class ArrayHeap<T> implements ExtrinsicPQ<T> {
                     contents[i].myPriority = priority;
                     swim(i);
                 }
-                break;
             }
         }
     }
