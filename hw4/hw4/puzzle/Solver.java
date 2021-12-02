@@ -41,15 +41,11 @@ public class Solver {
     public Solver(WorldState initial) {
         estimatedDistance = new HashMap<>();
         pq.insert(new aStarNode(initial, 0, null));
-        solution = getSolution();
-    }
-
-    private List<WorldState> getSolution() {
         List<WorldState> solu = new ArrayList<>();
+        aStarNode currNode = new aStarNode(initial, 0 , null);
         while (!pq.isEmpty()) {
-            aStarNode currNode = pq.delMin();
+            currNode = pq.delMin();
             if (currNode.now.isGoal()) {
-                pq.insert(currNode);
                 break;
             }
             for (WorldState ws : currNode.now.neighbors()) {
@@ -60,14 +56,19 @@ public class Solver {
             }
         }
         Stack<WorldState> path = new Stack<>();
-        for (aStarNode n = pq.delMin(); n != null; n = n.prev) {
+        for (aStarNode n = currNode; n != null; n = n.prev) {
             path.push(n.now);
         }
         while (!path.isEmpty()) {
             solu.add(path.pop());
         }
-        return solu;
+        solution = solu;
     }
+
+
+
+
+
 
     public int moves() {
         return solution.size() - 1;

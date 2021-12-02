@@ -8,14 +8,10 @@ public class Board implements WorldState{
     private int size;
 
     public Board(int[][] tiles) {
-        if (tiles == null) {
-            throw new NullPointerException();
-        }
         int n = tiles.length;
-        int m = tiles[0].length;
-        cowmoo = new int[n][m];
+        cowmoo = new int[n][n];
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
+            for (int j = 0; j < n; j++) {
                 cowmoo[i][j] = tiles[i][j];
             }
         }
@@ -73,7 +69,7 @@ public class Board implements WorldState{
     }
 
     public int hamming() {
-        int now = 0;
+        int now = 1;
         int hammi = 0;
         for (int i = 0; i < size; i ++) {
             for (int j = 0; j <size; j ++) {
@@ -148,4 +144,8 @@ public class Board implements WorldState{
         return s.toString();
     }
 
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
 }
