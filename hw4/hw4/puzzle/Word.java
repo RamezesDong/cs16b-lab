@@ -6,7 +6,7 @@ import java.util.HashSet;
 import edu.princeton.cs.introcs.In;
 
 public class Word implements WorldState {
-    private static Set<String> words;
+    private static Set<String> words;  //10000 words table
     private static final String WORDFILE = "input/words10000.txt";
     private final String word;
     private final String goal;
@@ -64,7 +64,7 @@ public class Word implements WorldState {
                 int cj = Math.min(1 + Math.min(costs[j], costs[j - 1]),
                          a.charAt(i - 1) == b.charAt(j - 1) ? nw : nw + 1);
                 nw = costs[j];
-                costs[j] = cj;
+                costs[j] = cj;   //dp min.cost[]
             }
         }
         return costs[b.length()];
