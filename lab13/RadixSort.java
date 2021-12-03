@@ -1,3 +1,7 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.HashMap;
+
 /**
  * Class for doing Radix sort
  *
@@ -16,19 +20,40 @@ public class RadixSort {
      * @return String[] the sorted array
      */
     public static String[] sort(String[] asciis) {
-        // TODO: Implement LSD Sort
-        return null;
+        String[] sorted = new String[asciis.length];
+        System.arraycopy(sorted, 0, asciis, 0, asciis.length);
+        for (int d = asciis[0].length() - 1; d >= 0; d--) {
+            sortHelperLSD(sorted, d);
+        }
+        return sorted;
     }
 
     /**
      * LSD helper method that performs a destructive counting sort the array of
      * Strings based off characters at a specific index.
      * @param asciis Input array of Strings
-     * @param index The position to sort the Strings on.
+ * @param index The position to sort the Strings on.
      */
     private static void sortHelperLSD(String[] asciis, int index) {
-        // Optional LSD helper method for required LSD radix sort
-        return;
+        HashMap<Character, Integer> hashMap = new HashMap<>();
+        for (String s : asciis) {
+            hashMap.put(s.charAt(index), hashMap.get(s.charAt(index)) + 1);
+        }
+        String[] sorted = new String[asciis.length];
+        int[] starts = new int[256];
+        int pos = 0;
+        for (int i = 0; i < starts.length; i += 1) {
+            starts[i] = pos;
+            pos += hashMap.get((char)i);
+        }
+
+        for (int i = 0; i < asciis.length; i += 1) {
+            String item = asciis[i];
+            int place = starts[(int)item.charAt(index)];
+            sorted[place] = item;
+            starts[(int)item.charAt(index)] += 1;
+        }
+        System.arraycopy(asciis, 0, sorted, 0, asciis.length);
     }
 
     /**
