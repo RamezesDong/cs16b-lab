@@ -1,12 +1,13 @@
-package lab14lib;
+package lab14;
 
+import lab14lib.Generator;
 import org.junit.Assert;
 
-public class StrangeBitwiseGenerator implements Generator {
+public class SawToothGenerator implements Generator {
     private int period;
     private int state;
 
-    public StrangeBitwiseGenerator(int val) {
+    public SawToothGenerator(int val) {
         try {
             Integer.valueOf(val);
             period = val;
